@@ -8,4 +8,4 @@ An exploration of representation and classification using a synthetic control da
 ## Getting Started
 
 ## References
-(Synthetic Control Chart Time Series Data Set)[https://archive.ics.uci.edu/ml/datasets/Synthetic+Control+Chart+Time+Series]
+(https://archive.ics.uci.edu/ml/datasets/Synthetic+Control+Chart+Time+Series)[Synthetic Control Chart Time Series Data Set]
