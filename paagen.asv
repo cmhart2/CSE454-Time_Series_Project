@@ -1,0 +1,57 @@
+% Clear workspace, command window, and close any open plots
+clc
+clear
+close all
+
+data = load('synthetic_control_data.mat'); % load data
+data = data.syntheticcontrol;
+
+%c = 100; % window size
+s = size(data); % size of data matrix
+t_n = s(2); % number of columns
+ln = t_n/c; % length of segments
+ln = ceil(ln); % can't have a fraction
+
+for i = 1:s(1) % number of rows (60)
+    for N = 1:c % window size
+        samples = []; % vector to store current samples
+        sampleCtr = 1; % sample counter
+        if (N-1) * ln < s(2)
+            lowerBound = (N-1) * ln;
+            upperBound = N * ln;
+            for j = 1:s(2) % number of columns (600)
+                if j > lowerBound
+                    if j <= upperBound
+                        samples(sampleCtr) = data(i,j); % store data point in samples
+                        sampleCtr = sampleCtr + 1; % increment sample counter
+                    end
+                end
+            end
+        end
+        paa(i,N) = mean(samples); % calculate the mean of all samples in the segment
+    end
+end
+
+i = 2;
+paax = []; paay = [];
+z = 1; % index of value we are placing in
+n = 1; % initial segment
+
+paax(z) = 0;
+paay(z) = paa(i,n); % establish first element
+z = z + 1; % increment value index
+
+for n = 2:c
+    paax(z) = paax(z-1) + ln;
+    paay(z) = paa(i,n-1);
+    z = z + 1; % increment value index
+
+    paax(z) = paax(z-1);
+    paay(z) = paa(i,n);
+    z = z + 1; % increment value index
+end
+
+plot(paax, paay);
+hold on
+t = linspace(0, s(2), s(2));
+scatter(t, data(i, :), "filled");
