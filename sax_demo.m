@@ -32,14 +32,14 @@
 function [sax_string] = sax_demo(data)
 
     if nargin == 0
-        data_len      = 600;
+        data_len      = 100;
         data = random_walk(data_len);
     else
         data_len      = length(data);
     end
     
-    nseg          = 6;
-    alphabet_size = 6;
+    nseg          = 10;
+    alphabet_size = 10;
 
     if alphabet_size > 10
         disp('Currently alphabet_size cannot be larger than 10.  Please update the breakpoint table if you wish to do so');
@@ -64,8 +64,6 @@ function [sax_string] = sax_demo(data)
     data = (data - mean(data))/std(data);
 
     plot(data);
-
-    pause;
     
     % special case: no dimensionality reduction
     if data_len == nseg
@@ -83,8 +81,6 @@ function [sax_string] = sax_demo(data)
     
     hold on;
     plot(PAA_plot,'r');
-    
-    pause;
 
     % map the segments to string
     str = timeseries2symbol(data, data_len, nseg, alphabet_size);
@@ -107,8 +103,6 @@ function [sax_string] = sax_demo(data)
     guidelines = repmat(cutlines', 1, data_len);    
     plot(guidelines', 'color', [0.8 0.8 0.8]);
     hold on    
-    
-    pause;
     
     color = {'g', 'y', 'm', 'c', 'b'};
     symbols = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};

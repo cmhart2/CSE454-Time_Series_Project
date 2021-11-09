@@ -6,20 +6,63 @@ close all
 data = load('synthetic_control_data.mat'); % load data
 data = data.syntheticcontrol;
 
-N = 100;
-n = 6;
-alphabet_size = 6;
-c = 100; % window size
-i = 2;
+% partition the data by class
+normal = data(1:100);
+cyclic = data(101:200);
+incrTrend = data(201:300);
+decrTrend = data(301:400);
+upShift = data(401:500);
+downShift = data(501:600);
 
-%paa = paagen(c, data);
-%paaplot(paa, data, c, i);
 
-%ser = timeseries2symbol(data, N, n, alphabet_size, [2])
-subplot(2,1,1);
-sax_data = timeseries2symbol(data, N, n, alphabet_size, 1);
-sax_demo(data);
+% normalStr = timeseries2symbol(normal, 100, 10, 4, 2);
+% cyclicStr = timeseries2symbol(cyclic, 100, 10, 4, 2);
+% incrTrendStr = timeseries2symbol(incrTrend, 100, 10, 4, 2);
+% decrTrendStr = timeseries2symbol(decrTrend, 100, 10, 4, 2);
+% upShiftStr = timeseries2symbol(upShift, 100, 10, 4, 2);
+% downShiftStr = timeseries2symbol(downShift, 100, 10, 4, 2);
 
-subplot(2,1,2);
-sax_demo(sax_data);
+subplot(6,1,1);
+paa_demo(normal);
+% sax_demo(normal);
+
+
+subplot(6,1,2);
+paa_demo(cyclic);
+% sax_demo(cyclic);
+
+
+subplot(6,1,3);
+paa_demo(incrTrend);
+% sax_demo(incrTrend);
+
+
+subplot(6,1,4);
+paa_demo(decrTrend);
+% sax_demo(decrTrend);
+
+subplot(6,1,5);
+paa_demo(upShift);
+% sax_demo(upShift);
+
+subplot(6,1,6);
+sax_demo(downShift);
+% sax_demo(downShift);
+
+% N = 100;
+% n = 6;
+% alphabet_size = 6;
+% c = 100; % window size
+% 
+% subplot(2,1,1);
+% title("");
+% sax_demo(data);
+% pause;
+% 
+% subplot(2,1,2);
+% 
+% [sax_data, pointers] = timeseries2symbol(data, 100, 6, alphabet_size, 2);
+% data = [pointers sax_data];
+% sax_demo();
+
 

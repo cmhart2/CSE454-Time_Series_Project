@@ -39,9 +39,11 @@ function [] = symbolic_visual(data)
         data = temp([1:len]);
     end
     
+    c = 100;
+
     alphabet_size = 6;
     
-    n = 16;
+    n = 6;
     
     len = length(data);
     
@@ -127,7 +129,7 @@ function plot_symbolic(data, str, len, sym_seg, alphabet_size)
         case 9, cutlines  = [-1.22 -0.76 -0.43 -0.14 0.14 0.43 0.76 1.22];
         case 10, cutlines = [-1.28 -0.84 -0.52 -0.25 0. 0.25 0.52 0.84 1.28];
         otherwise, disp('WARNING:: Alphabet size too big');
-    end;
+    end
 
     % draw the gray guide lines in the background
     guidelines = repmat(cutlines', 1, len);    
