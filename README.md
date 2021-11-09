@@ -1,6 +1,6 @@
 # Time Series Project
-## Caroline Hart
-## CSE 454 Dr. Jenn Winikus
+### Caroline Hart
+### CSE 454 Dr. Jenn Winikus
 
 ## About
 
