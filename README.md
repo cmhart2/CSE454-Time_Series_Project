@@ -37,6 +37,6 @@ The third figure represents the SAX representation of the data set.
 ## References
 [1]  Lin, J., Keogh, E., Lonardi, S. & Chiu, B. "A Symbolic Representation of Time Series, with Implications for Streaming Algorithms."  In proceedings of the 8th ACM SIGMOD Workshop on Research Issues in Data Mining and  Knowledge Discovery. San Diego, CA. June 13, 2003. 
 
-[2]  Lin, J., Keogh, E., Patel, P. & Lonardi, S. "Finding Motifs in Time Series". In proceedings of the 2nd Workshop on Temporal Data Mining, at the 8th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. Edmonton, Alberta, Canada. July 23-26, 2002
+[2]  Lin, J., Keogh, E., Patel, P. & Lonardi, S. "Finding Motifs in Time Series". In proceedings of the 2nd Workshop on Temporal Data Mining, at the 8th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. Edmonton, Alberta, Canada. July 23-26, 2002.
 
-[3]  Dua, D. and Graff, C. "Synthetic Control Chart Time Series Data Set". UCI Machine Learning Repository [https://archive.ics.uci.edu/ml/datasets/Synthetic+Control+Chart+Time+Series]. Irvine, CA: University of California, School of Information and Computer Science. 2019
+[3]  Dua, D. and Graff, C. "Synthetic Control Chart Time Series Data Set". UCI Machine Learning Repository [https://archive.ics.uci.edu/ml/datasets/Synthetic+Control+Chart+Time+Series]. Irvine, CA: University of California, School of Information and Computer Science. 2019.
